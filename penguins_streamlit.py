@@ -5,10 +5,16 @@
 import streamlit as st
 import pickle
 
+# password
+password_guess = st.text_input("What is the Password?")
+if password_guess != st.secrets["password"]:
+  st.stop()
+
+# create app title
 st.title('Penguin Classifier: A Machine Learning App') 
 
 # Display the image
-#st.image('penguins.png', width = 400)
+st.image('penguins.png', width = 400)
 
 st.write("This app uses 6 inputs to predict the species of penguin using " 
          "a model built on the Palmer's Penguin's dataset. Use the form below" 
